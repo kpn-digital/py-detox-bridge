@@ -28,7 +28,7 @@ the NVM_DIR environment variable needs to point at the root directory of nvm con
 NODE
 ----
 
-The code emitted by this bridge requires node 7.6.0 or higher.
+The code emitted by this bridge requires node 8 or higher. Node 7.6 should work but is not tested.
 
 
 Python

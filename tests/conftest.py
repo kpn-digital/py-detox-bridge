@@ -8,7 +8,7 @@ from pytest import fixture
 def node_environment(tmpdir):
     old = getcwd()
     chdir(str(tmpdir))
-    open(".nvmrc", "w").write("v7.6.0")
+    open(".nvmrc", "w").write("v8.11.3")
     yield node
     chdir(old)
 

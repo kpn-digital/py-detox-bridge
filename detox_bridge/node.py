@@ -29,7 +29,7 @@ class NodeError(RuntimeError):
         lines = []
         for k, v in self._error.items():
             lines.append("{}:".format(k))
-            for line in v.splitlines():
+            for line in str(v).splitlines():
                 lines.append("  {}".format(line))
         return "\n".join(lines)
 
@@ -68,7 +68,7 @@ class Connection(object):
             if error:
                 raise NodeError(error)
             self._result = self._result.get("result", None)
-        except:
+        except: # NOQA:E722
             t, v, tb = sys.exc_info()
             self._result = v
 

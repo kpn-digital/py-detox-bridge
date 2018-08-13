@@ -31,6 +31,16 @@ Any bug fixes
 Invite users to upgrade in case of vulnerabilities
 - 
 
+## [1.0.3] (2018-08-13)
+
+### Changed
+
+- lint fix
+
+### Fixes
+
+- fix crash during error handling
+
 ## [1.0.2] (2017-07-11)
 
 ### Changed

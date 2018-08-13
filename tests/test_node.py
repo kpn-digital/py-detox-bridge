@@ -5,7 +5,7 @@ from pytest import raises
 
 
 def test_node_which_pick_up_installed_node(node_environment):
-    assert node_environment.which().endswith("v7.6.0/bin/node")
+    assert node_environment.which().endswith("v8.11.3/bin/node")
 
 
 def test_node_server_responds_with_a_timeout_error_if_code_executioin_takes_longer_than_default_timeout(node_server):
@@ -55,3 +55,10 @@ def test_node_error_str_prints_multiline_exceptions_nicely():
     stack:
       Line 1
       Line 2""")
+
+
+def test_node_error_str_prints_numbers():
+    assert str(node.NodeError({
+        "code": 127
+    })) == dedent("""\
+    code: 127""")

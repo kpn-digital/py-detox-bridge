@@ -6,15 +6,15 @@ cache:
   - "/Library/Caches/Homebrew"
   - "/usr/local/Cellar"
 before_install:
-- curl https://www.python.org/ftp/python/3.6.1/python-3.6.1-macosx10.6.pkg > /tmp/python3.6.1.pkg
-  && sudo installer -pkg /tmp/python3.6.1.pkg -target /
+- curl https://www.python.org/ftp/python/3.6.6/python-3.6.6-macosx10.6.pkg > /tmp/python3.6.6.pkg
+  && sudo installer -pkg /tmp/python3.6.6.pkg -target /
 - curl https://www.python.org/ftp/python/3.5.3/python-3.5.3-macosx10.6.pkg > /tmp/python3.5.3.pkg
   && sudo installer -pkg /tmp/python3.5.3.pkg -target /
-- pip install codecov
+- pip3.6 install codecov
 - export CODE_SIGNING_REQUIRED=NO
-- which fbsimctl || brew tap facebook/fb && brew install fbsimctl --HEAD
+- brew tap wix/brew && brew install wix/brew/applesimutils
 - export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-- nvm install 7.6.0
+- nvm install 8.11.3
 install:
 - nvm use
 script:
